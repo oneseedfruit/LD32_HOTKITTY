@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Floor
+  - Wall
+  - Bug
+  - Steam
+  - Coal
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Cat
+  - Bug
+  - Steam
+  - CatTail
+  - Coal
+  - CoalChamber
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Bug
+    uniqueID: 603883125
+    locked: 0
+  - name: Player
+    uniqueID: 4084741779
+    locked: 0
+  - name: Steam
+    uniqueID: 3958438413
+    locked: 0

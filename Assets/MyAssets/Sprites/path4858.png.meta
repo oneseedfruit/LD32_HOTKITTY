@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: b2ea41a7af3b44d4bbabb5094c9e8257
+timeCreated: 1429448179
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: path4858_0
+    21300002: path4858_1
+    21300004: path4858_2
+    21300006: path4858_3
+    21300008: path4858_4
+    21300010: path4858_5
+    21300012: path4858_6
+    21300014: path4858_7
+    21300016: path4858_8
+    21300018: path4858_9
+    21300020: path4858_10
+    21300022: path4858_11
+    21300024: path4858_12
+    21300026: path4858_13
+    21300028: path4858_14
+    21300030: path4858_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: path4858_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 414
+        height: 275
+      alignment: 9
+      pivot: {x: .632568955, y: .411951363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_1
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 344
+        width: 111
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 418
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 423
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_4
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 353
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_5
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 353
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_6
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 202
+        width: 111
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 172
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 92
+        width: 312
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_9
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 153
+        width: 77
+        height: 32
+      alignment: 9
+      pivot: {x: .968187988, y: .183545113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_10
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 111
+        width: 78
+        height: 33
+      alignment: 9
+      pivot: {x: .0339012668, y: .180859879}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_11
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 122
+        width: 46
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_12
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 64
+        width: 83
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_13
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 81
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_14
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 0
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: path4858_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 62
+        height: 119
+      alignment: 9
+      pivot: {x: .0270686001, y: .816045046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Kettle
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

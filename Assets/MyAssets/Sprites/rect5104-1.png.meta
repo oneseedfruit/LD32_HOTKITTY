@@ -1,0 +1,330 @@
+fileFormatVersion: 2
+guid: 79a1fbbc994f03647bf7fff17f348bf3
+timeCreated: 1429459021
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rect5104-1_0
+    21300002: rect5104-1_1
+    21300004: rect5104-1_2
+    21300006: rect5104-1_3
+    21300008: rect5104-1_4
+    21300010: rect5104-1_5
+    21300012: rect5104-1_6
+    21300014: rect5104-1_7
+    21300016: rect5104-1_8
+    21300018: rect5104-1_9
+    21300020: rect5104-1_10
+    21300022: rect5104-1_11
+    21300024: rect5104-1_12
+    21300026: rect5104-1_13
+    21300028: rect5104-1_14
+    21300030: rect5104-1_15
+    21300032: rect5104-1_16
+    21300034: rect5104-1_17
+    21300036: rect5104-1_18
+    21300038: rect5104-1_19
+    21300040: rect5104-1_20
+    21300042: rect5104-1_21
+    21300044: rect5104-1_22
+    21300046: rect5104-1_23
+    21300048: rect5104-1_24
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rect5104-1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1804
+        width: 453
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_1
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1825
+        width: 454
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_2
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1789
+        width: 453
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_3
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 1419
+        width: 824
+        height: 774
+      alignment: 9
+      pivot: {x: .484893501, y: .0682762563}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1245
+        width: 453
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1245
+        width: 454
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_6
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1239
+        width: 453
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_7
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 1074
+        width: 89
+        height: 194
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_8
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 1068
+        width: 88
+        height: 195
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_9
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 801
+        width: 451
+        height: 541
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_10
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 665
+        width: 453
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_11
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 683
+        width: 454
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_12
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1095
+        width: 135
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_13
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 636
+        width: 453
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_14
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 933
+        width: 83
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_15
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 562
+        width: 192
+        height: 127
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_16
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 550
+        width: 189
+        height: 127
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 26
+        width: 456
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_18
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 38
+        width: 453
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_19
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 44
+        width: 456
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_20
+      rect:
+        serializedVersion: 2
+        x: 1987
+        y: 374
+        width: 212
+        height: 44
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_21
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 371
+        width: 212
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_22
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 283
+        width: 371
+        height: 188
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_23
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 38
+        width: 150
+        height: 174
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rect5104-1_24
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 0
+        width: 150
+        height: 171
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Kettle
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
