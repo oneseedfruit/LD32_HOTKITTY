@@ -41,6 +41,7 @@ public class KettleCat : MonoBehaviour
         audioCat = GetComponent<AudioSource>();
         rb2DCat = GetComponent<Rigidbody2D>();
         coalValAccumulated = KettleCatTail.coalValAccumulated;
+        Cockroach.score = 0;
     }
     
     // Use this for initialization
@@ -141,9 +142,12 @@ public class KettleCat : MonoBehaviour
         }
 
         if (KettleCatTail.coalValAccumulated <= 0f)
-        {            
+        {
             if (Input.anyKey)
+            {
+                Cockroach.score = 0;
                 Application.LoadLevel(0);
+            }
         }
 	}   
 

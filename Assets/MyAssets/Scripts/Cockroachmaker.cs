@@ -58,7 +58,7 @@ public class Cockroachmaker : MonoBehaviour {
         float sizeVal = Random.Range(0.2f, 0.4f);
         cockroach.transform.localScale = new Vector2(sizeVal, sizeVal);
         if (Cockroach.CockroachCount <= 100f)
-            Instantiate(cockroach, new Vector2(Random.Range(-20f, 20f), Random.Range(5f, 20f)), Quaternion.identity);
+            Instantiate(cockroach, new Vector2(Random.Range(-15f, 15f), Random.Range(5f, 15f)), Quaternion.identity);
         yield break;
     }
 }
