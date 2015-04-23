@@ -12,7 +12,7 @@ public class Cockroach : MonoBehaviour {
     SpriteRenderer[] srCockroach;
     AudioSource audioCockroach;
 
-    int healthVal;
+    float healthVal;
     public static int score = 0;
     float speed = 0;
 
@@ -27,7 +27,7 @@ public class Cockroach : MonoBehaviour {
         col2DCockroach = GetComponent<Collider2D>();
         wj2DCockroach = GetComponentsInChildren<WheelJoint2D>();
         srCockroach = GetComponentsInChildren<SpriteRenderer>();
-        healthVal = Random.Range(1, 10);
+        healthVal = Random.value * 350f * transform.localScale.x;
         CockroachState = State.Alive;
         audioCockroach = GetComponent<AudioSource>();
         CockroachCount++;
@@ -43,8 +43,9 @@ public class Cockroach : MonoBehaviour {
         else
             direction = -1f;
 
-        speed = direction * Random.Range(100f, 300f);
+        speed = direction * Random.Range(100f, 500f);
 
+        StartCoroutine(ReactToHurt());
         StartCoroutine(DieWhenKilled());
 	}
 	
@@ -54,7 +55,7 @@ public class Cockroach : MonoBehaviour {
             CockroachState = State.Dead;
 
         if (audioCockroach != null)
-            if (Random.Range (0, 1) > 0)
+            if (Random.value < 0.001f)
                 if (!audioCockroach.isPlaying)
                     audioCockroach.Play();
 	}
@@ -64,10 +65,10 @@ public class Cockroach : MonoBehaviour {
         if (CockroachState == State.Alive)
         {
             jm2DCockroachLeft.motorSpeed = speed;
-            jm2DCockroachLeft.maxMotorTorque = 300f;
+            jm2DCockroachLeft.maxMotorTorque = 500f;
 
             jm2DCockroachRight.motorSpeed = speed;
-            jm2DCockroachRight.maxMotorTorque = 300f;
+            jm2DCockroachRight.maxMotorTorque = 500f;
 
             for (int i = 0; i < wj2DCockroach.Length; i++)
             {
@@ -76,6 +77,9 @@ public class Cockroach : MonoBehaviour {
                 else
                     wj2DCockroach[i].motor = jm2DCockroachLeft;
             }
+
+            if (rb2DCockroach.velocity.x == 0f)
+                rb2DCockroach.AddForce(Vector2.up * 3f, ForceMode2D.Impulse);
         }
         else
         {
@@ -99,26 +103,82 @@ public class Cockroach : MonoBehaviour {
         if (col.tag == "Steam")
         {
             Steam steam = col.gameObject.GetComponent<Steam>();
-            healthVal -= steam.dmgVal;
+            healthVal -= steam.dmgVal;            
         }
     }
 
     void OnCollisionEnter2D (Collision2D col)
     {
-        if (col.collider.tag == "Wall")
+        if (col.collider.tag == "Wall" || col.collider.tag == "Bug")
             speed = -speed;
 
-        if (col.collider.tag == "Player")
-            if (col.gameObject.transform.position.x < transform.position.x)
-                speed = Mathf.Abs(speed);
+        jm2DCockroachLeft.motorSpeed = 0;
+        jm2DCockroachRight.motorSpeed = 0;
+
+        for (int i = 0; i < wj2DCockroach.Length; i++)
+        {
+            if (i == 0)
+                wj2DCockroach[i].motor = jm2DCockroachRight;
             else
-                speed = -Mathf.Abs(speed);
+                wj2DCockroach[i].motor = jm2DCockroachLeft;
+        }          
     }
 
     void OnDestroy ()
     {
         CockroachCount--;
         score++;
+    }
+
+    IEnumerator ReactToHurt()
+    {
+        while (true)
+        {
+            float health = healthVal;
+            yield return new WaitForEndOfFrame();
+
+            if (health > healthVal)
+            {
+                if (CockroachState != State.Dead)
+                {
+                    float i = 1.0f;
+                    while (i > 0)
+                    {
+                        i -= 10f * Time.deltaTime;
+                        for (int j = 0; j < srCockroach.Length; j++)
+                        {
+                            srCockroach[j].color = new Color(i, srCockroach[j].color.g - i, srCockroach[j].color.b, 2f * i);
+                            if (CockroachState == State.Dead)
+                                srCockroach[j].color = Color.black;
+                        }
+                        yield return new WaitForEndOfFrame();
+                    }
+                    while (i < 1.0f)
+                    {
+                        i += 10f * Time.deltaTime;
+                        for (int j = 0; j < srCockroach.Length; j++)
+                        {
+                            srCockroach[j].color = new Color(Color.red.r, Color.red.g, i + Color.black.b, i);
+                            if (CockroachState == State.Dead)
+                                srCockroach[j].color = Color.black;
+                        }
+                        yield return new WaitForEndOfFrame();
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < srCockroach.Length; j++)
+                    {
+                        srCockroach[j].color = Color.black;
+                    }
+                }
+            }
+
+            if (CockroachState == State.Dead)
+                yield break;
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     IEnumerator DieWhenKilled ()
@@ -134,7 +194,9 @@ public class Cockroach : MonoBehaviour {
                     srCockroach[i].color = Color.black;
                 }
 
-                    yield break;
+                yield return new WaitForEndOfFrame();
+
+                yield break;
             }
             yield return new WaitForEndOfFrame();
         }

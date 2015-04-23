@@ -50,6 +50,7 @@ public class KettleCat : MonoBehaviour
         StartCoroutine(AnimateKettle());
         StartCoroutine(ControlKettle());
         StartCoroutine(ReactToTemp());
+        StartCoroutine(GameOver());
         coalVal = Random.Range(0.05f, 0.1f);
 	}
 	
@@ -58,24 +59,29 @@ public class KettleCat : MonoBehaviour
     {
         if (!Mathf.Equals(rb2DCat.velocity.x, 0f))
             if (audioCat != null)
-                if (Random.Range(0, 2) > 1)
+                if (Random.value < 0.001f)
                     if (!audioCat.isPlaying)
                     {
                         audioCat.priority = 199;
                         audioCat.Play();
                     }
 
+        if (srMouth.transform.position.x > srKettle.transform.position.x)
+            isFacingLeft = false;
+        else if (srMouth.transform.position.x < srKettle.transform.position.x)
+            isFacingLeft = true;
+
         coalValAccumulated = KettleCatTail.coalValAccumulated;
         if (kctTail.cockroachAssimilationState != KettleCatTail.AssimiliationState.Absorbing)
         {
             if (Input.GetAxis("Horizontal") > 0)
             {
-                isFacingLeft = false;
+                
                 transform.eulerAngles = new Vector3(0, 180f, 0);
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
-                isFacingLeft = true;
+                
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
 
@@ -102,14 +108,7 @@ public class KettleCat : MonoBehaviour
                             steamShot.AddComponent<SpriteRenderer>().sprite = blowSteam;
 
                             AudioSource audioSteam = steamShot.AddComponent<AudioSource>();
-                            audioSteam.clip = audioBlow;
-                            audioSteam.playOnAwake = true;
-                            audioSteam.priority = 200;
-                            audioSteam.bypassReverbZones = false;
-                            audioSteam.reverbZoneMix = 0f;
-                            audioSteam.volume = 0.05f;
-                            if (!audioSteam.isPlaying)
-                                audioSteam.Play();
+                            StartCoroutine(SteamAudio(audioSteam));
 
                             KettleCatTail.coalValAccumulated -= coalVal;
                             break;
@@ -139,16 +138,7 @@ public class KettleCat : MonoBehaviour
 
                 coalVal = Random.Range(0.05f, 0.1f);
             }
-        }
-
-        if (KettleCatTail.coalValAccumulated <= 0f)
-        {
-            if (Input.anyKey)
-            {
-                Cockroach.score = 0;
-                Application.LoadLevel(0);
-            }
-        }
+        }        
 	}   
 
     void FixedUpdate ()
@@ -167,6 +157,21 @@ public class KettleCat : MonoBehaviour
                 wj2DKettleCat[i].motor = jm2DKettleCatBack;
         }
     }    
+
+    IEnumerator SteamAudio (AudioSource audioSteam)
+    {
+        audioSteam.clip = audioBlow;
+        audioSteam.playOnAwake = true;
+        audioSteam.priority = 200;
+        audioSteam.bypassReverbZones = false;
+        audioSteam.reverbZoneMix = 0f;
+        audioSteam.volume = 0.5f;
+        if (Component.FindObjectOfType<AudioSource>() != audioSteam)
+        {
+            audioSteam.Play();
+        }
+        yield break;
+    }
 
     IEnumerator ControlKettle ()
     {
@@ -229,8 +234,41 @@ public class KettleCat : MonoBehaviour
                     break;
                 }
             }
-
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    IEnumerator GameOver ()
+    {
+        while (true)
+        {
+            if (KettleCatTail.coalValAccumulated <= 0f)
+            {
+                if (Input.anyKey)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
+                else
+                {
+                    yield return StartCoroutine(LoadNextLevel());
+                    yield break;
+                }
+            }
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator LoadNextLevel ()
+    {
+        while (true)
+        {
+            if (Input.anyKey)
+            {
+                Cockroach.score = 0;
+                Application.LoadLevel(0);
+                yield break;
+            }
+            yield return new WaitForEndOfFrame();
+        }        
     }
 }

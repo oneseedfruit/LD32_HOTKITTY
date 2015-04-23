@@ -8,6 +8,7 @@ public class Cockroachmaker : MonoBehaviour {
     public Text txtScore;
 
     Cockroach cockroach;
+    Vector3 previousCockroachSpawnPoint;
 
     void Awake ()
     {
@@ -40,14 +41,14 @@ public class Cockroachmaker : MonoBehaviour {
             }
         }
         else if (KettleCatTail.coalValAccumulated <= 0)
-            txtScore.text = "YOU'RE NOT HOT ANYMORE. GAME OVER. YOUR FINAL SCORE IS " + Cockroach.score + " PRESS ANY TO RESTART.";
+            txtScore.text = "YOU USED TO BE HOT, NOT YOU'RE NOT. \nYOU'VE CONSUMED ONLY " + Cockroach.score + " BUGS! \nPRESS ANY KEY TO RESTART.";
 	}
 
     IEnumerator MakeCockroachTimer ()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(0.5f, 5f));
+            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
             yield return StartCoroutine(MakeCockroach());
             yield return new WaitForEndOfFrame();
         }
@@ -57,8 +58,19 @@ public class Cockroachmaker : MonoBehaviour {
     {
         float sizeVal = Random.Range(0.2f, 0.4f);
         cockroach.transform.localScale = new Vector2(sizeVal, sizeVal);
-        if (Cockroach.CockroachCount <= 100f)
-            Instantiate(cockroach, new Vector2(Random.Range(-15f, 15f), Random.Range(5f, 15f)), Quaternion.identity);
+
+        Vector2 cockroachSpawnPoint = new Vector2(Random.Range(-15f, 15f), Random.Range(5f, 15f));
+        if (previousCockroachSpawnPoint != null)
+        {
+            if (Mathf.Abs(cockroachSpawnPoint.x - previousCockroachSpawnPoint.x) >= cockroach.transform.localScale.x + 3f)
+                if (Cockroach.CockroachCount <= 100f)
+                    Instantiate(cockroach, cockroachSpawnPoint, Quaternion.identity);
+        }
+        else
+            if (Cockroach.CockroachCount <= 100f)
+                Instantiate(cockroach, cockroachSpawnPoint, Quaternion.identity);
+
+        previousCockroachSpawnPoint = cockroach.transform.position;
         yield break;
     }
 }

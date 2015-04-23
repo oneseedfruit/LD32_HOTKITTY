@@ -7,7 +7,7 @@ public class Steam : MonoBehaviour {
     SpriteRenderer srSteam;
     Rigidbody2D rb2DSteam;
 
-    public int dmgVal;
+    public float dmgVal;
 
     void Awake ()
     {        
@@ -18,7 +18,7 @@ public class Steam : MonoBehaviour {
         colSteam.isTrigger = true;
         rb2DSteam = gameObject.AddComponent<Rigidbody2D>();
         rb2DSteam.gravityScale = 0.1f;
-        dmgVal = Random.Range(1, 10);
+        dmgVal = Random.value * 10;
     }
 
 	// Use this for initialization
@@ -31,7 +31,7 @@ public class Steam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        dmgVal = Random.value * 10;
 	}
 
     void OnTriggerEnter2D (Collider2D col)
