@@ -81,7 +81,7 @@ public class KettleCatTail : MonoBehaviour {
         sprCoal.sprite = spriteCoal;
         coal.AddComponent<CircleCollider2D>();
         Rigidbody2D rb2DCoal = coal.AddComponent<Rigidbody2D>();
-        rb2DCoal.drag = 3f;
+        rb2DCoal.drag = 1f;
         rb2DCoal.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         Destroy(col.gameObject);

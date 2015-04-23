@@ -210,6 +210,26 @@ public class KettleCat : MonoBehaviour
         {
             float pctCoalAccum = KettleCatTail.coalValAccumulated / kctTail.coalCapacity;
             sprKettle.color = new Color(sprKettle.color.r, 1 - pctCoalAccum, 1 - pctCoalAccum, sprKettle.color.a);
+
+            Sprite ejectSteam;
+            for (int i = 0; i < spriteSteam.Length; i++)
+            {
+                if (i == Random.Range(0, spriteSteam.Length - 1) && pctCoalAccum > 0.5f)
+                {
+                    ejectSteam = spriteSteam[i];
+                    GameObject steamShot = new GameObject();
+                    steamShot.name = "Evaporated Steam";
+                    steamShot.tag = "Evaporated Steam";
+                    Vector2 up;
+                        up = new Vector2(transform.position.x, transform.position.y + 2.5f);                    
+                    steamShot.transform.position = up;
+                    steamShot.AddComponent<Steam>();
+                    steamShot.AddComponent<SpriteRenderer>().sprite = ejectSteam;
+                    steamShot.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+                    break;
+                }
+            }
+
             yield return new WaitForEndOfFrame();
         }
     }

@@ -44,21 +44,31 @@ public class Steam : MonoBehaviour {
         float i = 1.0f;
         while (i > 0f)
         {
-            i -= 1.5f * Time.deltaTime;
+            i -= 1.5f * Time.deltaTime;            
 
-            srSteam.color = new Color(srSteam.color.r, srSteam.color.g, srSteam.color.b, i);
-
-            if (!KettleCat.isFacingLeft)
+            if (this.tag != "Evaporated Steam")
             {
-                rb2DSteam.AddForce(Vector2.right * i, ForceMode2D.Impulse);
-            }
-            else if (KettleCat.isFacingLeft)
-            {
-                rb2DSteam.AddForce(-Vector2.right * i, ForceMode2D.Impulse);
-            }
+                srSteam.color = new Color(srSteam.color.r, srSteam.color.g, srSteam.color.b, i);
 
-            float j = 1 - i;
-            transform.localScale = new Vector2(j, j);
+                if (!KettleCat.isFacingLeft)
+                {
+                    rb2DSteam.AddForce(Vector2.right * i, ForceMode2D.Impulse);
+                }
+                else if (KettleCat.isFacingLeft)
+                {
+                    rb2DSteam.AddForce(-Vector2.right * i, ForceMode2D.Impulse);
+                }
+
+                float j = 1 - i;
+                transform.localScale = new Vector2(j, j);
+            }
+            else if (this.tag == "Evaporated Steam")
+            {
+                transform.localScale = Vector2.one * 0.5f;
+                srSteam.color = new Color(srSteam.color.r, srSteam.color.g, srSteam.color.b, 0.05f * i);
+                int k = Random.value > 0.5f ? 1 : -1;
+                rb2DSteam.AddForce(k * Vector2.right * 50f);
+            }
 
             yield return new WaitForEndOfFrame();
         }
