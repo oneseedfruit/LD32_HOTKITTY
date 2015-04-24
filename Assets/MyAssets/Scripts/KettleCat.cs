@@ -2,7 +2,25 @@
 using System.Collections;
 
 public class KettleCat : MonoBehaviour
-{
+{   
+    public enum State { Idle, Blow, Dead };
+    public State KettleState;
+
+    public static Transform trKettleCat;
+    public static bool isFacingLeft = true;
+
+    public float speed;
+    public SpriteRenderer srKettle;
+    public SpriteRenderer srMouth;
+    public Sprite spriteMouthSmile;
+    public Sprite spriteMouthBlow;
+    public AudioClip audioBlow;
+    public Sprite[] spriteSteam = new Sprite[13];
+
+    float temp = 0;
+    float coalVal;
+    float coalValAccumulated;
+    
     WheelJoint2D[] wj2DKettleCat;
     JointMotor2D jm2DKettleCatFront;
     JointMotor2D jm2DKettleCatBack;
@@ -10,26 +28,8 @@ public class KettleCat : MonoBehaviour
     AudioSource audioCat;
     Rigidbody2D rb2DCat;
 
-    public static Transform trKettleCat;
-    public static bool isFacingLeft = true;
-
-    public SpriteRenderer srKettle;
-    public SpriteRenderer srMouth;
-    public Sprite spriteMouthSmile;
-    public Sprite spriteMouthBlow;
-    public AudioClip audioBlow;
-    public Sprite[] spriteSteam = new Sprite[13];
-    public float speed;
-
-    public enum State { Idle, Blow, Dead };
-    public State KettleState;
-
     KettleCatTail kctTail;
-    SpriteRenderer sprKettle;    
-
-    float temp = 0;
-    float coalVal;
-    float coalValAccumulated;
+    SpriteRenderer sprKettle;        
 
 	void Awake ()
     {
@@ -41,6 +41,7 @@ public class KettleCat : MonoBehaviour
         audioCat = GetComponent<AudioSource>();
         rb2DCat = GetComponent<Rigidbody2D>();
         coalValAccumulated = KettleCatTail.coalValAccumulated;
+
         Cockroach.score = 0;
     }
     

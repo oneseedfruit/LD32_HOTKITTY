@@ -3,37 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class KettleCatTail : MonoBehaviour {
-    CoalChamber coalChamber;
-
     public enum AssimiliationState { Absorbing, NotAbsorbing };
     public AssimiliationState cockroachAssimilationState;
 
-    public Sprite spriteCoal;
-    
     public static float coalValAccumulated = 20f;
     public float coalCapacity = 100f;
-
     public List<GameObject> coalStorage;
 
-    void Awake ()
-    {
-        coalValAccumulated = 20f;
-        coalChamber = GetComponentInParent<CoalChamber>();
+    public Sprite spriteCoal;
+
+    CoalChamber coalChamber;
+
+    void Awake () {
         cockroachAssimilationState = AssimiliationState.NotAbsorbing;
+        coalValAccumulated = 20f;
+        coalChamber = GetComponentInParent<CoalChamber>();        
     }
 
-	// Use this for initialization
-	void Start () {
-	    
-	}
-	
 	// Update is called once per frame
 	void Update () {
         coalValAccumulated -= 0.5f * Random.value * Time.deltaTime;
 	}
 
-    void OnTriggerStay2D (Collider2D col)
-    {
+    void OnTriggerStay2D (Collider2D col) {
         if (col.tag == "Bug" && col.isTrigger)
         {            
             Cockroach cockroach;
@@ -52,8 +44,7 @@ public class KettleCatTail : MonoBehaviour {
         }
     }
 
-    IEnumerator AbsorbCockroach (Collider2D col)
-    {
+    IEnumerator AbsorbCockroach (Collider2D col) {
         float i = 1.0f;
         while (i > 0f)
         {

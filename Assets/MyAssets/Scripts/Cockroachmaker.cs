@@ -10,8 +10,7 @@ public class Cockroachmaker : MonoBehaviour {
     Cockroach cockroach;
     Vector3 previousCockroachSpawnPoint;
 
-    void Awake ()
-    {
+    void Awake () {
         if (InstantiateThis.tag == "Bug")
         {
             if (InstantiateThis.gameObject != null)
@@ -44,8 +43,7 @@ public class Cockroachmaker : MonoBehaviour {
             txtScore.text = "YOU USED TO BE HOT, NOT YOU'RE NOT. \nYOU'VE CONSUMED ONLY " + Cockroach.score + " BUGS! \nPRESS ANY KEY TO RESTART.";
 	}
 
-    IEnumerator MakeCockroachTimer ()
-    {
+    IEnumerator MakeCockroachTimer () {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(0.5f, 2f));
@@ -54,8 +52,7 @@ public class Cockroachmaker : MonoBehaviour {
         }
     }
 
-    IEnumerator MakeCockroach ()
-    {
+    IEnumerator MakeCockroach () {
         float sizeVal = Random.Range(0.2f, 0.4f);
         cockroach.transform.localScale = new Vector2(sizeVal, sizeVal);
 

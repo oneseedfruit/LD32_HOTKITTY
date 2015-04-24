@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Steam : MonoBehaviour {
 
+    public float dmgVal;
+
     BoxCollider2D colSteam;
     SpriteRenderer srSteam;
     Rigidbody2D rb2DSteam;
-
-    public float dmgVal;
 
     void Awake ()
     {        
